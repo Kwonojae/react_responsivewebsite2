@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { MdOutlineRestaurantMenu } from 'react-icons/md'
+import { Link } from "react-scroll";
 
 import images from '../../constants/images'
 import './Navbar.css';
+
+
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -13,11 +16,11 @@ const Navbar = () => {
         <img src={images.gericht} alt="app logo" />
       </div>
       <ul className='app__navbar-links'>
-        <li className='p__opensans'><a href="#home">Home</a></li>
-        <li className='p__opensans'><a href="#about">About</a></li>
-        <li className='p__opensans'><a href="#menu">Menu</a></li>
-        <li className='p__opensans'><a href="#awards">Awards</a></li>
-        <li className='p__opensans'><a href="#contact">Contact</a></li>
+      <li className='p__opensans'><Link to='home' smooth={true} offset={200} duration={500}>Home</Link></li>
+                <li className='p__opensans'><Link to='about' smooth={true} offset={200} duration={500} >About</Link></li>
+                <li className='p__opensans'><Link to='menu' smooth={true} offset={200} duration={500}>Menu</Link></li>
+                <li className='p__opensans'><Link to='awards'smooth={true} offset={200} duration={500}>Awards</Link></li>
+                <li className='p__opensans'><Link to='contact' smooth={true} offset={200} duration={500}>Contact</Link></li>
       </ul>
       <div className='app__navbar-login'>
         <a href="#login" className='p__opensans'>Log In / Register</a>
@@ -30,11 +33,11 @@ const Navbar = () => {
           <div className='app__navbar-smallscreen_overlay flex__center slide-bottom'>
             <MdOutlineRestaurantMenu fontSize={27} className="overlay__close" onClick={() => setToggleMenu(false)}/>
               <ul className='app__navbar-smallscreen_links'>
-                <li className='p__opensans'><a href="#home">Home</a></li>
-                <li className='p__opensans'><a href="#about">About</a></li>
-                <li className='p__opensans'><a href="#menu">Menu</a></li>
-                <li className='p__opensans'><a href="#awards">Awards</a></li>
-                <li className='p__opensans'><a href="#contact">Contact</a></li>
+                <li className='p__opensans'><Link to='home' smooth={true} offset={200} duration={500}>Home</Link></li>
+                <li className='p__opensans'><Link to='about' smooth={true} offset={200} duration={500} >About</Link></li>
+                <li className='p__opensans'><Link to='menu' smooth={true} offset={200} duration={500}>Menu</Link></li>
+                <li className='p__opensans'><Link to='awards'smooth={true} offset={200} duration={500}>Awards</Link></li>
+                <li className='p__opensans'><Link to='contact' smooth={true} offset={200} duration={500}>Contact</Link></li>
               </ul>
           </div>
           )}
